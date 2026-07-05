@@ -1,8 +1,8 @@
 import React from 'react';
 import products from '../data/products';
-import ProductCard from './ProductCard';
+import ProductCard from './Productcard';
 
-const ProductList = () => {
+const Productlist = () => {
   return (
     
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
@@ -13,4 +13,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default Productlist;
