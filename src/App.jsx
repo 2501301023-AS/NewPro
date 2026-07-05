@@ -1,10 +1,9 @@
 
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import Navbar from './Component/Navbar';
-import ProductList from './Component/Productlist';
-import Cartitems from './Component/Cartitems';
-
+import Navbar from "./Component/Navbar";
+import ProductList from "./Component/Productlist";
+import Cartitems from "./Component/Cartitems";
 const App = () => {
   const [view, setView] = useState('shop');
   const cartItems = useSelector((state) => state.cart.cartItems);
