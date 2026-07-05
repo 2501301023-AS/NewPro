@@ -1,14 +1,14 @@
 
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import cartReducer from "../Features/CartSlice";
-import Productlist from "./Component/Productlist";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import Navbar from "./Component/Navbar";
+import ProductList from "./Component/Productlist";
 import CartItems from "./Component/CartItems";
 const App = () => {
   const [view, setView] = useState('shop');
-  const cartItems = useSelector((state) => state.cart.cartItems);
+  const CartItems = useSelector((state) => state.cart.CartItems);
 
-  const totalPrice = cartItems.reduce((acc, item) => acc + (item.price * (item.quantity || 1)), 0);
+  const totalPrice = CartItems.reduce((acc, item) => acc + (item.price * (item.quantity || 1)), 0);
 
   return (
     <div className="bg-gray-50 min-h-screen font-sans antialiased">
@@ -18,7 +18,7 @@ const App = () => {
         {view === 'shop' ? (
           <div>
             <h2 className="text-xl font-black tracking-wide uppercase text-gray-900 mb-6">Catalog</h2>
-            <Productlist />
+            <ProductList />
           </div>
         ) : (
           <div className="max-w-2xl mx-auto">
@@ -33,15 +33,15 @@ const App = () => {
             </div>
 
             <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-              {cartItems.length === 0 ? (
+              {CartItems.length === 0 ? (
                 <div className="text-center py-12">
                   <p className="text-gray-400 font-bold text-sm">Your cart is currently empty.</p>
                 </div>
               ) : (
                 <>
                   <div className="mb-6">
-                    {cartItems.map((item) => (
-                      <Cartitems key={item.id} item={item} />
+                    {CartItems.map((item) => (
+                      <CartItems key={item.id} item={item} />
                     ))}
                   </div>
 
