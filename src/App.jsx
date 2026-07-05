@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import Navbar from "./Component/Navbar";
-import ProductList from "./Component/Productlist";
-import Cartitems from "./Component/Cartitems";
+import cartReducer from "../Features/CartSlice";
+import Productlist from "./Component/Productlist";
+import CartItems from "./Component/CartItems";
 const App = () => {
   const [view, setView] = useState('shop');
   const cartItems = useSelector((state) => state.cart.cartItems);
@@ -18,7 +18,7 @@ const App = () => {
         {view === 'shop' ? (
           <div>
             <h2 className="text-xl font-black tracking-wide uppercase text-gray-900 mb-6">Catalog</h2>
-            <ProductList />
+            <Productlist />
           </div>
         ) : (
           <div className="max-w-2xl mx-auto">
